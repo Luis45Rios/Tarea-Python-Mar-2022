@@ -1,0 +1,55 @@
+"""EJERCICIO 15.- Crea una aplicación que permita adivinar un número. En primer lugar la 
+aplicación solicita un número entero por teclado. A continuación va pidiendo números y va 
+respondiendo si el número a adivinar es mayor o menor que el introducido. 
+El programa termina cuando se acierta el número."""
+
+import random
+
+intentosRealizados = 0
+
+
+
+print('¡Hola! ¿Cómo te llamas?')
+
+miNombre = input()
+
+número = random.randint(1, 20)
+
+print('Bueno, ' + miNombre + ', estoy pensando en un número entre 1 y 20.')
+
+while intentosRealizados < 6:
+
+    print('Intenta adivinar.') # Hay cuatro espacios delante de print.
+
+    estimación = input()
+
+    estimación = int(estimación)
+
+
+    intentosRealizados = intentosRealizados + 1
+
+
+    if estimación < número:
+
+        print('Tu estimación es muy baja.') # Hay ocho espacios delante de print.
+
+    if estimación > número:
+
+        print('Tu estimación es muy alta.')
+
+    if estimación == número:
+
+        break
+
+if estimación == número:
+
+    intentosRealizados = str(intentosRealizados)
+
+    print('¡Buen trabajo, ' + miNombre + '! ¡Has adivinado mi número en ' + intentosRealizados + ' intentos!')
+
+
+if estimación != número:
+
+    número = str(número)
+
+    print('Pues no. El número que estaba pensando era ' + número)
